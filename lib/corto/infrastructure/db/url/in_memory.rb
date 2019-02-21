@@ -1,11 +1,16 @@
+require 'singleton'
+
 module Corto
   module Infrastructure
     module DB
       module URL
         # In memory database to store the urls processed by the system.
         class InMemory
+          include Singleton
+
           def initialize
             @urls = []
+            @id = 0
           end
 
           def all
@@ -13,15 +18,17 @@ module Corto
           end
 
           def next_id
-            @urls.count + 1
+            @id + 1
           end
 
           def save(url)
+            @id += 1
+            url[:id] = @id
             @urls << url
           end
 
-          def find(short:)
-            @urls.select { |url| url[:short] == short }
+          def find(id)
+            @urls.select { |url| url[:id] == id }
           end
         end
       end

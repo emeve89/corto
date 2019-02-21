@@ -12,7 +12,7 @@ module Corto
       end
 
       register 'urls_datasource' do
-        Corto::Infrastructure::DB::URL::InMemory.new
+        Corto::Infrastructure::DB::URL::InMemory.instance
       end
     end
   end

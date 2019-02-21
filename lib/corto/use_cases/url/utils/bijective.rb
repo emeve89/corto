@@ -5,21 +5,23 @@ module Corto
         module Bijective
           ALPHABET = (('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a).join
 
-          def encode(i)
-            return ALPHABET[0] if i == 0
+          private
+
+          def encode(id)
+            return ALPHABET[0] if id.zero?
             s = ''
             base = ALPHABET.length
-            while i > 0
-              s << ALPHABET[i.modulo(base)]
-              i /= base
+            while id > 0
+              s << ALPHABET[id.modulo(base)]
+              id /= base
             end
             s.reverse
           end
 
-          def decode(s)
+          def decode(base64)
             i = 0
             base = ALPHABET.length
-            s.each_char { |c| i = i * base + ALPHABET.index(c) }
+            base64.each_char { |c| i = i * base + ALPHABET.index(c) }
             i
           end
         end

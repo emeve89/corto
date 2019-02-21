@@ -6,8 +6,8 @@ module Corto
       class Url
         include Import['urls_datasource']
 
-        def find(short:)
-          urls_datasource.find(short: short)
+        def find(id)
+          urls_datasource.find(id)
         end
 
         def all
