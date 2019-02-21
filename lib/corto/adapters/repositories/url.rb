@@ -14,6 +14,10 @@ module Corto
           urls_datasource.all
         end
 
+        def next_id
+          urls_datasource.next_id
+        end
+
         def save(url)
           urls_datasource.save(url)
         end

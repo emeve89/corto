@@ -12,6 +12,10 @@ module Corto
             @urls
           end
 
+          def next_id
+            @urls.count + 1
+          end
+
           def save(url)
             @urls << url
           end
