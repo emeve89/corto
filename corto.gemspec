@@ -37,6 +37,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "dry-struct", "~> 0.6.0"
+  spec.add_runtime_dependency "dry-transaction", "~> 0.13.0"
+  spec.add_runtime_dependency "dry-auto_inject", "~> 0.6.0"
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
