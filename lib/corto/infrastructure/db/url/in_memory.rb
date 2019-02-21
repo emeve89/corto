@@ -28,7 +28,7 @@ module Corto
           end
 
           def find(id)
-            @urls.select { |url| url[:id] == id }
+            @urls.find { |url| url[:id] == id }
           end
         end
       end
