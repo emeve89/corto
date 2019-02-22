@@ -8,11 +8,11 @@ module Corto
       extend Dry::Container::Mixin
 
       register 'urls_repository' do
-        Corto::Adapters::Repositories::Url.new
+        Corto::Adapters::UrlRepo.new
       end
 
-      register 'urls_datasource' do
-        Corto::Infrastructure::DB::URL::InMemory.instance
+      register 'db_container' do
+        Corto::Infrastructure::DB_CONTAINER
       end
     end
   end

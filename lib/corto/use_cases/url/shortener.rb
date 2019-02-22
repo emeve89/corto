@@ -27,7 +27,7 @@ module Corto
         end
 
         def save(input)
-          urls_repository.save(url: input[:url], base64: input[:encoded_id])
+          urls_repository.create(long: input[:url], short: input[:encoded_id])
           Success(input[:encoded_id])
         end
       end

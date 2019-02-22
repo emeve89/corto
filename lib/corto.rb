@@ -1,5 +1,6 @@
+require_relative './corto/infrastructure/rom.rb'
 require_relative './corto/infrastructure/container.rb'
-require_relative './corto/adapters/repositories/url.rb'
+require_relative './corto/adapters/url_repo.rb'
 require_relative './corto/infrastructure/db/url/in_memory.rb'
 require_relative './corto/use_cases/url/shortener.rb'
 require_relative './corto/use_cases/url/decoder.rb'

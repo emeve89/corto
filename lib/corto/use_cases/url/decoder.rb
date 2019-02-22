@@ -14,7 +14,7 @@ module Corto
         def reverse(input)
           id = decode(input)
           original_url = urls_repository.find(id)
-          url = Corto::Entities::URL.new(short: input, long: original_url[:url])
+          url = Corto::Entities::URL.new(short: input, long: original_url.long)
           Success(url)
         end
       end
