@@ -16,7 +16,7 @@ module Corto
       end
 
       register 'presenter' do
-        Object.new
+        Corto::Adapters::UrlPresenter.new
       end
     end
   end

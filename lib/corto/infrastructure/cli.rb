@@ -10,4 +10,5 @@ OptionParser.new do |opts|
   end
 end.parse!
 
+exit if @options[:url].strip.empty?
 Corto::Adapters::UrlShortenerController.new.call(@options[:url])

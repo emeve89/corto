@@ -6,7 +6,8 @@ module Corto
 
       def call(url)
         use_case = Corto::UseCases::Url::Shortener.new
-        use_case.call(url)
+        result = use_case.call(url)
+        presenter.call(result)
       end
     end
   end
