@@ -1,6 +1,7 @@
 module Corto
   module UseCases
     module Url
+      # Class that receives a base64 code and returns a URL Entity.
       class Decoder
         include Dry::Transaction
         include Import['urls_repository']

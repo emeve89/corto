@@ -18,17 +18,16 @@ module Corto
 
         def get_next_id(input)
           next_id = urls_repository.next_id
-          Success({next_id: next_id, url: input})
+          Success(next_id: next_id, url: input)
         end
 
         def shorten(input)
           encoded_id = encode(input[:next_id])
-          Success({encoded_id: encoded_id, url: input[:url]})
+          Success(encoded_id: encoded_id, url: input[:url])
         end
 
         def save(input)
-          urls_repository.save({url: input[:url], base64: input[:encoded_id]})
-          p urls_repository.all
+          urls_repository.save(url: input[:url], base64: input[:encoded_id])
           Success(input[:encoded_id])
         end
       end

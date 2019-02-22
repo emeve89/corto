@@ -2,14 +2,21 @@ module Corto
   module UseCases
     module Url
       module Utils
+        # Module that helps with the encoding and decoding.
         module Bijective
-          ALPHABET = (('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a).join.freeze
+          ALPHABET = (
+            ('a'..'z').to_a +
+            ('A'..'Z').to_a +
+            (0..9).to_a
+          ).join.freeze
+
           BASE = ALPHABET.size.freeze
 
           private
 
           def encode(id)
             return ALPHABET[0] if id.zero?
+
             ''.tap do |s|
               while id > 0
                 s << ALPHABET[id.modulo(BASE)]
