@@ -14,6 +14,10 @@ module Corto
       register 'db_container' do
         Corto::Infrastructure::DB_CONTAINER
       end
+
+      register 'presenter' do
+        Object.new
+      end
     end
   end
 end

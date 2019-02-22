@@ -2,9 +2,9 @@ require 'rom'
 
 module Corto
   module Infrastructure
-    DB_CONTAINER = ROM.container(:sql, 'sqlite::memory') do |config|
+    DB_CONTAINER = ROM.container(:sql, 'sqlite://corto_development.db') do |config|
       # Create Table
-      config.default.connection.create_table(:urls) do
+      config.default.connection.create_table?(:urls) do
         primary_key :id
         column :short, String, null: false
         column :long, String, null: false
